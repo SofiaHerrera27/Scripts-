@@ -1,0 +1,396 @@
+1     2-1. cleanup: A script to clean up log files in /var/log
+2     2-2. cleanup: An improved clean-up script
+3     2-3. cleanup: An enhanced and generalized version of above scripts.
+4     3-1. Code blocks and I/O redirection
+5     3-2. Saving the output of a code block to a file
+6     3-3. Running a loop in the background
+7     3-4. Backup of all files changed in last day
+8     4-1. Variable assignment and substitution
+9     4-2. Plain Variable Assignment
+10     4-3. Variable Assignment, plain and fancy
+11     4-4. Integer or string?
+12     4-5. Positional Parameters
+13     4-6. wh, whois domain name lookup
+14     4-7. Using shift
+15     5-1. Echoing Weird Variables
+16     5-2. Escaped Characters
+17     5-3. Detecting key-presses
+18     6-1. exit / exit status
+19     6-2. Negating a condition using !
+20     7-1. What is truth?
+21     7-2. Equivalence of test, /usr/bin/test, [ ], and /usr/bin/[
+22     7-3. Arithmetic Tests using (( ))
+23     7-4. Testing for broken links
+24     7-5. Arithmetic and string comparisons
+25     7-6. Testing whether a string is null
+26     7-7. zmore
+27     8-1. Greatest common divisor
+28     8-2. Using Arithmetic Operations
+29     8-3. Compound Condition Tests Using && and ||
+30     8-4. Representation of numerical constants
+31     8-5. C-style manipulation of variables
+32     9-1. $IFS and whitespace
+33     9-2. Timed Input
+34     9-3. Once more, timed input
+35     9-4. Timed read
+36     9-5. Am I root?
+37     9-6. arglist: Listing arguments with $* and $@
+38     9-7. Inconsistent $* and $@ behavior
+39     9-8. $* and $@ when $IFS is empty
+40     9-9. Underscore variable
+41     9-10. Using declare to type variables
+42     9-11. Generating random numbers
+43     9-12. Picking a random card from a deck
+44     9-13. Brownian Motion Simulation
+45     9-14. Random between values
+46     9-15. Rolling a single die with RANDOM
+47     9-16. Reseeding RANDOM
+48     9-17. Pseudorandom numbers, using awk
+49     10-1. Inserting a blank line between paragraphs in a text file
+50     10-2. Generating an 8-character "random" string
+51     10-3. Converting graphic file formats, with filename change
+52     10-4. Converting streaming audio files to ogg
+53     10-5. Emulating getopt
+54     10-6. Alternate ways of extracting and locating substrings
+55     10-7. Using parameter substitution and error messages
+56     10-8. Parameter substitution and "usage" messages
+57     10-9. Length of a variable
+58     10-10. Pattern matching in parameter substitution
+59     10-11. Renaming file extensions:
+60     10-12. Using pattern matching to parse arbitrary strings
+61     10-13. Matching patterns at prefix or suffix of string
+62     11-1. Simple for loops
+63     11-2. for loop with two parameters in each [list] element
+64     11-3. Fileinfo: operating on a file list contained in a variable
+65     11-4. Operating on a parameterized file list
+66     11-5. Operating on files with a for loop
+67     11-6. Missing in [list] in a for loop
+68     11-7. Generating the [list] in a for loop with command substitution
+69     11-8. A grep replacement for binary files
+70     11-9. Listing all users on the system
+71     11-10. Checking all the binaries in a directory for authorship
+72     11-11. Listing the symbolic links in a directory
+73     11-12. Symbolic links in a directory, saved to a file
+74     11-13. A C-style for loop
+75     11-14. Using efax in batch mode
+76     11-15. Simple while loop
+77     11-16. Another while loop
+78     11-17. while loop with multiple conditions
+79     11-18. C-style syntax in a while loop
+80     11-19. until loop
+81     11-20. Nested Loop
+82     11-21. Effects of break and continue in a loop
+83     11-22. Breaking out of multiple loop levels
+84     11-23. Continuing at a higher loop level
+85     11-24. Using continue N in an actual task
+86     11-25. Using case
+87     11-26. Creating menus using case
+88     11-27. Using command substitution to generate the case variable
+89     11-28. Simple string matching
+90     11-29. Checking for alphabetic input
+91     11-30. Creating menus using select
+92     11-31. Creating menus using select in a function
+93     12-1. Stupid script tricks
+94     12-2. Generating a variable from a loop
+95     12-3. Finding anagrams
+96     15-1. A script that spawns multiple instances of itself
+97     15-2. printf in action
+98     15-3. Variable assignment, using read
+99     15-4. What happens when read has no variable
+100     15-5. Multi-line input to read
+101     15-6. Detecting the arrow keys
+102     15-7. Using read with file redirection
+103     15-8. Problems reading from a pipe
+104     15-9. Changing the current working directory
+105     15-10. Letting let do arithmetic.
+106     15-11. Showing the effect of eval
+107     15-12. Using eval to select among variables
+108     15-13. Echoing the command-line parameters
+109     15-14. Forcing a log-off
+110     15-15. A version of rot13
+111     15-16. Using set with positional parameters
+112     15-17. Reversing the positional parameters
+113     15-18. Reassigning the positional parameters
+114     15-19. "Unsetting" a variable
+115     15-20. Using export to pass a variable to an embedded awk script
+116     15-21. Using getopts to read the options/arguments passed to a script
+117     15-22. "Including" a data file
+118     15-23. A (useless) script that sources itself
+119     15-24. Effects of exec
+120     15-25. A script that exec's itself
+121     15-26. Waiting for a process to finish before proceeding
+122     15-27. A script that kills itself
+123     16-1. Using ls to create a table of contents for burning a CDR disk
+124     16-2. Hello or Good-bye
+125     16-3. Badname, eliminate file names in current directory containing bad characters and whitespace.
+126     16-4. Deleting a file by its inode number
+127     16-5. Logfile: Using xargs to monitor system log
+128     16-6. Copying files in current directory to another
+129     16-7. Killing processes by name
+130     16-8. Word frequency analysis using xargs
+131     16-9. Using expr
+132     16-10. Using date
+133     16-11. Date calculations
+134     16-12. Word Frequency Analysis
+135     16-13. Which files are scripts?
+136     16-14. Generating 10-digit random numbers
+137     16-15. Using tail to monitor the system log
+138     16-16. Printing out the From lines in stored e-mail messages
+139     16-17. Emulating grep in a script
+140     16-18. Crossword puzzle solver
+141     16-19. Looking up definitions in Webster's 1913 Dictionary
+142     16-20. Checking words in a list for validity
+143     16-21. toupper: Transforms a file to all uppercase.
+144     16-22. lowercase: Changes all filenames in working directory to lowercase.
+145     16-23. du: DOS to UNIX text file conversion.
+146     16-24. rot13: ultra-weak encryption.
+147     16-25. Generating "Crypto-Quote" Puzzles
+148     16-26. Formatted file listing.
+149     16-27. Using column to format a directory listing
+150     16-28. nl: A self-numbering script.
+151     16-29. manview: Viewing formatted manpages
+152     16-30. Using cpio to move a directory tree
+153     16-31. Unpacking an rpm archive
+154     16-32. Stripping comments from C program files
+155     16-33. Exploring /usr/X11R6/bin
+156     16-34. An "improved" strings command
+157     16-35. Using cmp to compare two files within a script.
+158     16-36. basename and dirname
+159     16-37. A script that copies itself in sections
+160     16-38. Checking file integrity
+161     16-39. Uudecoding encoded files
+162     16-40. Finding out where to report a spammer
+163     16-41. Analyzing a spam domain
+164     16-42. Getting a stock quote
+165     16-43. Updating FC4
+166     16-44. Using ssh
+167     16-45. A script that mails itself
+168     16-46. Generating prime numbers
+169     16-47. Monthly Payment on a Mortgage
+170     16-48. Base Conversion
+171     16-49. Invoking bc using a here document
+172     16-50. Calculating PI
+173     16-51. Converting a decimal number to hexadecimal
+174     16-52. Factoring
+175     16-53. Calculating the hypotenuse of a triangle
+176     16-54. Using seq to generate loop arguments
+177     16-55. Letter Count"
+178     16-56. Using getopt to parse command-line options
+179     16-57. A script that copies itself
+180     16-58. Exercising dd
+181     16-59. Capturing Keystrokes
+182     16-60. Preparing a bootable SD card for the Raspberry Pi
+183     16-61. Securely deleting a file
+184     16-62. Filename generator
+185     16-63. Converting meters to miles
+186     16-64. Using m4
+187     17-1. Setting a new password
+188     17-2. Setting an erase character
+189     17-3. secret password: Turning off terminal echoing
+190     17-4. Keypress detection
+191     17-5. Checking a remote server for identd
+192     17-6. pidof helps kill a process
+193     17-7. Checking a CD image
+194     17-8. Creating a filesystem in a file
+195     17-9. Adding a new hard drive
+196     17-10. Using umask to hide an output file from prying eyes
+197     17-11. Backlight: changes the brightness of the (laptop) screen backlight
+198     17-12. killall, from /etc/rc.d/init.d
+199     19-1. broadcast: Sends message to everyone logged in
+200     19-2. dummyfile: Creates a 2-line dummy file
+201     19-3. Multi-line message using cat
+202     19-4. Multi-line message, with tabs suppressed
+203     19-5. Here document with replaceable parameters
+204     19-6. Upload a file pair to Sunsite incoming directory
+205     19-7. Parameter substitution turned off
+206     19-8. A script that generates another script
+207     19-9. Here documents and functions
+208     19-10. "Anonymous" Here Document
+209     19-11. Commenting out a block of code
+210     19-12. A self-documenting script
+211     19-13. Prepending a line to a file
+212     19-14. Parsing a mailbox
+213     20-1. Redirecting stdin using exec
+214     20-2. Redirecting stdout using exec
+215     20-3. Redirecting both stdin and stdout in the same script with exec
+216     20-4. Avoiding a subshell
+217     20-5. Redirected while loop
+218     20-6. Alternate form of redirected while loop
+219     20-7. Redirected until loop
+220     20-8. Redirected for loop
+221     20-9. Redirected for loop (both stdin and stdout redirected)
+222     20-10. Redirected if/then test
+223     20-11. Data file names.data for above examples
+224     20-12. Logging events
+225     21-1. Variable scope in a subshell
+226     21-2. List User Profiles
+227     21-3. Running parallel processes in subshells
+228     22-1. Running a script in restricted mode
+229     23-1. Code block redirection without forking
+230     23-2. Redirecting the output of process substitution into a loop.
+231     24-1. Simple functions
+232     24-2. Function Taking Parameters
+233     24-3. Functions and command-line args passed to the script
+234     24-4. Passing an indirect reference to a function
+235     24-5. Dereferencing a parameter passed to a function
+236     24-6. Again, dereferencing a parameter passed to a function
+237     24-7. Maximum of two numbers
+238     24-8. Converting numbers to Roman numerals
+239     24-9. Testing large return values in a function
+240     24-10. Comparing two large integers
+241     24-11. Real name from username
+242     24-12. Local variable visibility
+243     24-13. Demonstration of a simple recursive function
+244     24-14. Another simple demonstration
+245     24-15. Recursion, using a local variable
+246     24-16. The Fibonacci Sequence
+247     24-17. The Towers of Hanoi
+248     25-1. Aliases within a script
+249     25-2. unalias: Setting and unsetting an alias
+250     26-1. Using an and list to test for command-line arguments
+251     26-2. Another command-line arg test using an and list
+252     26-3. Using or lists in combination with an and list
+253     27-1. Simple array usage
+254     27-2. Formatting a poem
+255     27-3. Various array operations
+256     27-4. String operations on arrays
+257     27-5. Loading the contents of a script into an array
+258     27-6. Some special properties of arrays
+259     27-7. Of empty arrays and empty elements
+260     27-8. Initializing arrays
+261     27-9. Copying and concatenating arrays
+262     27-10. More on concatenating arrays
+263     27-11. The Bubble Sort
+264     27-12. Embedded arrays and indirect references
+265     27-13. The Sieve of Eratosthenes
+266     27-14. The Sieve of Eratosthenes, Optimized
+267     27-15. Emulating a push-down stack
+268     27-16. Complex array application: Exploring a weird mathematical series
+269     27-17. Simulating a two-dimensional array, then tilting it
+270     28-1. Indirect Variable References
+271     28-2. Passing an indirect reference to awk
+272     29-1. Using /dev/tcp for troubleshooting
+273     29-2. Playing music
+274     29-3. Finding the process associated with a PID
+275     29-4. On-line connect status
+276     30-1. Print the server environment
+277     30-2. IP addresses
+278     31-1. Hiding the cookie jar
+279     31-2. Setting up a swapfile using /dev/zero
+280     31-3. Creating a ramdisk
+281     32-1. A buggy script
+282     32-2. Missing keyword
+283     32-3. test24: another buggy script
+284     32-4. Testing a condition with an assert
+285     32-5. Trapping at exit
+286     32-6. Cleaning up after Control-C
+287     32-7. A Simple Implementation of a Progress Bar
+288     32-8. Tracing a variable
+289     32-9. Running multiple processes (on an SMP box)
+290     34-1. Numerical and string comparison are not equivalent
+291     34-2. Subshell Pitfalls
+292     34-3. Piping the output of echo to a read
+293     36-1. shell wrapper
+294     36-2. A slightly more complex shell wrapper
+295     36-3. A generic shell wrapper that writes to a logfile
+296     36-4. A shell wrapper around an awk script
+297     36-5. A shell wrapper around another awk script
+298     36-6. Perl embedded in a Bash script
+299     36-7. Bash and Perl scripts combined
+300     36-8. Python embedded in a Bash script
+301     36-9. A script that speaks
+302     36-10. A (useless) script that recursively calls itself
+303     36-11. A (useful) script that recursively calls itself
+304     36-12. Another (useful) script that recursively calls itself
+305     36-13. A "colorized" address database
+306     36-14. Drawing a box
+307     36-15. Echoing colored text
+308     36-16. A "horserace" game
+309     36-17. A Progress Bar
+310     36-18. Return value trickery
+311     36-19. Even more return value trickery
+312     36-20. Passing and returning arrays
+313     36-21. Fun with anagrams
+314     36-22. Widgets invoked from a shell script
+315     36-23. Test Suite
+316     37-1. String expansion
+317     37-2. Indirect variable references - the new way
+318     37-3. Simple database application, using indirect variable referencing
+319     37-4. Using arrays and other miscellaneous trickery to deal four random hands from a deck of cards
+320     37-5. A simple address database
+321     37-6. A somewhat more elaborate address database
+322     37-7. Testing characters
+323     37-8. Reading N characters
+324     37-9. Using a here document to set a variable
+325     37-10. Piping input to a read
+326     37-11. Negative array indices
+327     37-12. Negative parameter in string-extraction construct
+328     A-1. mailformat: Formatting an e-mail message
+329     A-2. rn: A simple-minded file renaming utility
+330     A-3. blank-rename: Renames filenames containing blanks
+331     A-4. encryptedpw: Uploading to an ftp site, using a locally encrypted password
+332     A-5. copy-cd: Copying a data CD
+333     A-6. Collatz series
+334     A-7. days-between: Days between two dates
+335     A-8. Making a dictionary
+336     A-9. Soundex conversion
+337     A-10. Game of Life
+338     A-11. Data file for Game of Life
+339     A-12. behead: Removing mail and news message headers
+340     A-13. password: Generating random 8-character passwords
+341     A-14. fifo: Making daily backups, using named pipes
+342     A-15. Generating prime numbers using the modulo operator
+343     A-16. tree: Displaying a directory tree
+344     A-17. tree2: Alternate directory tree script
+345     A-18. string functions: C-style string functions
+346     A-19. Directory information
+347     A-20. Library of hash functions
+348     A-21. Colorizing text using hash functions
+349     A-22. More on hash functions
+350     A-23. Mounting USB keychain storage devices
+351     A-24. Converting to HTML
+352     A-25. Preserving weblogs
+353     A-26. Protecting literal strings
+354     A-27. Unprotecting literal strings
+355     A-28. Spammer Identification
+356     A-29. Spammer Hunt
+357     A-30. Making wget easier to use
+358     A-31. A podcasting script
+359     A-32. Nightly backup to a firewire HD
+360     A-33. An expanded cd command
+361     A-34. A soundcard setup script
+362     A-35. Locating split paragraphs in a text file
+363     A-36. Insertion sort
+364     A-37. Standard Deviation
+365     A-38. A pad file generator for shareware authors
+366     A-39. A man page editor
+367     A-40. Petals Around the Rose
+368     A-41. Quacky: a Perquackey-type word game
+369     A-42. Nim
+370     A-43. A command-line stopwatch
+371     A-44. An all-purpose shell scripting homework assignment solution
+372     A-45. The Knight's Tour
+373     A-46. Magic Squares
+374     A-47. Fifteen Puzzle
+375     A-48. The Towers of Hanoi, graphic version
+376     A-49. The Towers of Hanoi, alternate graphic version
+377     A-50. An alternate version of the getopt-simple.sh script
+378     A-51. The version of the UseGetOpt.sh example used in the Tab Expansion appendix
+379     A-52. Cycling through all the possible color backgrounds
+380     A-53. Morse Code Practice
+381     A-54. Base64 encoding/decoding
+382     A-55. Inserting text in a file using sed
+383     A-56. The Gronsfeld Cipher
+384     A-57. Bingo Number Generator
+385     A-58. Basics Reviewed
+386     A-59. Testing execution times of various commands
+387     A-60. Associative arrays vs. conventional arrays (execution times)
+388     C-1. Counting Letter Occurrences
+389     J-1. Completion script for UseGetOpt.sh
+390     M-1. Sample .bashrc file
+391     M-2. .bash_profile file
+392     N-1. VIEWDATA.BAT: DOS Batch File
+393     N-2. viewdata.sh: Shell Script Conversion of VIEWDATA.BAT
+394     T-1. A script that generates an ASCII table
+395     T-2. Another ASCII table script
+396     T-3. A third ASCII table script, using awk397
