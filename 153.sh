@@ -1,11 +1,15 @@
 #!/bin/bash
-# rnd.sh: Outputs a 10-digit random number
-
-# Genera un número aleatorio de 10 dígitos.
-# Utiliza /dev/urandom para obtener bytes aleatorios, los convierte en enteros sin signo de 4 bytes (32 bits)
-# y luego extrae el primer número de 4 dígitos de la salida.
-head -c4 /dev/urandom | od -An -tu4 | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]].*//' | head -n1
-
-
+# de-rpm.sh: Unpack an 'rpm' archive
+: ${1?"Usage: `basename $0` target-file"}
+# Must specify 'rpm' archive name as an argument.
+TEMPFILE=$$.cpio # Tempfile with "unique" name.
+# $$ is process ID of script.
+rpm2cpio < $1 > $TEMPFILE # Converts rpm archive into
+#+ cpio archive.
+cpio --make-directories -F $TEMPFILE -i # Unpacks cpio archive.
+rm -f $TEMPFILE # Deletes cpio archive.
 exit 0
-
+# Exercise:
+# Add check for whether 1) "target-file" exists and
+#+ 2) it is an rpm archive.
+# Hint: Parse output of 'file' command.

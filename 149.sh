@@ -1,7 +1,6 @@
 #!/bin/bash
 # colms.sh
 # A minor modification of the example file in the "column" man page.
-<<<<<<< HEAD
 (printf "PERMISSIONS LINKS OWNER GROUP SIZE MONTH DAY HH:MM PROG-NAME\n" \
 ; ls -l | sed 1d) | column -t
 # ^^^^^^ ^^
@@ -10,18 +9,3 @@
 #+ where "N" is the total number of files found by "ls -l".
 # The -t option to "column" pretty-prints a table.
 exit 0
-=======
-
-
-(printf "PERMISSIONS LINKS OWNER GROUP SIZE MONTH DAY HH:MM PROG-NAME\n" \
-; ls -l | sed 1d) | column -t
-#         ^^^^^^           ^^
-
-#  The "sed 1d" in the pipe deletes the first line of output,
-#+ which would be "total        N",
-#+ where "N" is the total number of files found by "ls -l".
-
-# The -t option to "column" pretty-prints a table.
-
-exit 0
->>>>>>> fee48c047471f1f772d522c1318a88de60bd695e
