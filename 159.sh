@@ -1,44 +1,25 @@
 #!/bin/bash
-# lookup: Does a dictionary lookup on each word in a data file.
+# splitcopy.sh
 
-file=words.data  # Data file from which to read words to test.
+# A script that splits itself into chunks,
+#+ then reassembles the chunks into an exact copy
+#+ of the original script.
 
-echo
-echo "Testing file $file"
-echo
+CHUNKSIZE=4     # Size of first chunk of split files.
+OUTPREFIX=xx    # csplit prefixes, by default,
+                #+ files with "xx" ...
 
-while [ "$word" != end ]  # Last word in data file.
-do               # ^^^
-  read word      # From data file, because of redirection at end of loop.
-  look $word > /dev/null  # Don't want to display lines in dictionary file.
-  #  Searches for words in the file /usr/share/dict/words
-  #+ (usually a link to linux.words).
-  lookup=$?      # Exit status of 'look' command.
+csplit "$0" "$CHUNKSIZE"
 
-  if [ "$lookup" -eq 0 ]
-  then
-    echo "\"$word\" is valid."
-  else
-    echo "\"$word\" is invalid."
-  fi  
+# Some comment lines for padding . . .
+# Line 15
+# Line 16
+# Line 17
+# Line 18
+# Line 19
+# Line 20
 
-done <"$file"    # Redirects stdin to $file, so "reads" come from there.
+cat "$OUTPREFIX"* > "$0.copy"   # Concatenate the chunks.
+rm "$OUTPREFIX"*                # Get rid of the chunks.
 
-echo
-
-exit 0
-
-# ----------------------------------------------------------------
-# Code below line will not execute because of "exit" command above.
-
-
-# Stephane Chazelas proposes the following, more concise alternative:
-
-while read word && [[ $word != end ]]
-do if look "$word" > /dev/null
-   then echo "\"$word\" is valid."
-   else echo "\"$word\" is invalid."
-   fi
-done <"$file"
-
-exit 0
+exit $?
