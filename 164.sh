@@ -1,12 +1,12 @@
 #!/bin/bash
 # quote-fetch.sh: Download a stock quote.
 
-
 E_NOPARAMS=86
 
-if [ -z "$1" ]  # Must specify a stock (symbol) to fetch.
-  then echo "Usage: `basename $0` stock-symbol"
-  exit $E_NOPARAMS
+if [ -z "$1" ] # Must specify a stock (symbol) to fetch.
+then 
+    echo "Usage: `basename $0` stock-symbol"
+    exit $E_NOPARAMS
 fi
 
 stock_symbol=$1
@@ -19,7 +19,6 @@ URL='http://finance.yahoo.com/q?s='
 # -----------------------------------------------------------
 wget -O ${stock_symbol}${file_suffix} "${URL}${stock_symbol}"
 # -----------------------------------------------------------
-
 
 # To look up stuff on http://search.yahoo.com:
 # -----------------------------------------------------------
@@ -34,7 +33,7 @@ exit $?
 # ---------
 #
 # 1) Add a test to ensure the user running the script is on-line.
-#    (Hint: parse the output of 'ps -ax' for "ppp" or "connect."
+# (Hint: parse the output of 'ps -ax' for "ppp" or "connect."
 #
 # 2) Modify this script to fetch the local weather report,
-#+   taking the user's zip code as an argument.
+#+ taking the user's zip code as an argument.

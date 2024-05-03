@@ -1,45 +1,23 @@
 #!/bin/bash
-# wf.sh: Crude word frequency analysis on a text file.
-# This is a more efficient version of the "wf2.sh" script.
-
-
-# Check for input file on command-line.
-ARGS=1
-E_BADARGS=85
-E_NOFILE=86
-
-if [ $# -ne "$ARGS" ]  # Correct number of arguments passed to script?
+# manview.sh: Formats the source of a man page for viewing.
+# This script is useful when writing man page source.
+# It lets you look at the intermediate results on the fly
+#+ while working on it.
+E_WRONGARGS=85
+if [ -z "$1" ]
 then
-  echo "Usage: $(basename "$0") filename"
-  exit $E_BADARGS
+echo "Usage: `basename $0` filename"
+exit $E_WRONGARGS
 fi
-
-if [ ! -f "$1" ]       # Check if file exists.
-then
-  echo "File \"$1\" does not exist."
-  exit $E_NOFILE
-fi
-
-
-
-########################################################
-# main ()
-sed -e 's/[[:punct:]]//g' -e 's/  */\n/g' "$1" | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr
-#                           =========================
-#                            Frequency of occurrence
-
-#  Filter out punctuation, and
-#+ change multiple spaces and other whitespace to linefeed,
-#+ then shift characters to lowercase, and
-#+ finally prefix occurrence count and sort numerically.
-
-# Exercises:
-# ---------
-# 1) Add 'sed' commands to filter out other punctuation,
-#+   such as semicolons.
-sed -e 's/[[:punct:]]//g' -e 's/  */\n/g' -e 's/;/\n/g' "$1" | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr
-
-# 2) Modify the script to also filter out multiple spaces and
-#+   other whitespace.
-sed -e 's/[[:punct:]]//g' -e 's/  */\n/g' -e 's/;/\n/g' -e 's/[[:space:]]\+/ /g' "$1" | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr
-
+# ---------------------------
+groff -Tascii -man $1 | less
+# From the man page for groff.
+# ---------------------------
+# If the man page includes tables and/or equations,
+#+ then the above code will barf.
+# The following line can handle such cases.
+#
+# gtbl < "$1" | geqn -Tlatin1 | groff -Tlatin1 -mtty-char -man
+#
+# Thanks, S.C.
+exit $? # See also the "maned.sh" script.

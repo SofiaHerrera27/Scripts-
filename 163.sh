@@ -4,7 +4,7 @@
 # $Id: is-spammer, v 1.4 2004/09/01 19:37:52 mszick Exp $
 # Above line is RCS ID info.
 #
-#  This is a simplified version of the "is_spammer.bash
+# This is a simplified version of the "is_spammer.bash
 #+ script in the Contributed Scripts appendix.
 
 # is-spammer <domain.name>
@@ -18,7 +18,7 @@
 
 # Use the domain.name(s) from the text body:
 # http://www.good_stuff.spammer.biz/just_ignore_everything_else
-#                       ^^^^^^^^^^^
+# ^^^^^^^^^^^
 # Or the domain.name(s) from any e-mail address:
 # Really_Good_Offer@spammer.biz
 #
@@ -26,8 +26,7 @@
 #(PS: have your Inet connection running)
 #
 # So, to invoke this script in the above two instances:
-#       is-spammer.sh spammer.biz
-
+# is-spammer.sh spammer.biz
 
 # Whitespace == :Space:Tab:Line Feed:Carriage Return:
 WSP_IFS=$'\x20'$'\x09'$'\x0A'$'\x0D'
@@ -41,7 +40,6 @@ ADR_IFS=${No_WSP}'.'
 # Get the dns text resource record.
 # get_txt <error_code> <list_query>
 get_txt() {
-
     # Parse $1 by assignment at the dots.
     local -a dns
     IFS=$ADR_IFS
@@ -94,36 +92,35 @@ then
     # Reorder octets into dns query order.
     rev_dns="${dns[3]}"'.'"${dns[2]}"'.'"${dns[1]}"'.'"${dns[0]}"'.'
 
-# See: http://www.spamhaus.org (Conservative, well maintained)
+    # See: http://www.spamhaus.org (Conservative, well maintained)
     echo -n 'spamhaus.org says: '
     echo $(chk_adr ${rev_dns} 'sbl-xbl.spamhaus.org')
 
-# See: http://ordb.org (Open mail relays)
-    echo -n '   ordb.org  says: '
+    # See: http://ordb.org (Open mail relays)
+    echo -n ' ordb.org says: '
     echo $(chk_adr ${rev_dns} 'relays.ordb.org')
 
-# See: http://www.spamcop.net/ (You can report spammers here)
+    # See: http://www.spamcop.net/ (You can report spammers here)
     echo -n ' spamcop.net says: '
     echo $(chk_adr ${rev_dns} 'bl.spamcop.net')
 
-# # # other blacklist operations # # #
+    # # # other blacklist operations # # #
 
-# See: http://cbl.abuseat.org.
+    # See: http://cbl.abuseat.org.
     echo -n ' abuseat.org says: '
     echo $(chk_adr ${rev_dns} 'cbl.abuseat.org')
 
-# See: http://dsbl.org/usage (Various mail relays)
+    # See: http://dsbl.org/usage (Various mail relays)
     echo
     echo 'Distributed Server Listings'
-    echo -n '       list.dsbl.org says: '
+    echo -n ' list.dsbl.org says: '
     echo $(chk_adr ${rev_dns} 'list.dsbl.org')
 
-    echo -n '   multihop.dsbl.org says: '
+    echo -n ' multihop.dsbl.org says: '
     echo $(chk_adr ${rev_dns} 'multihop.dsbl.org')
 
     echo -n 'unconfirmed.dsbl.org says: '
     echo $(chk_adr ${rev_dns} 'unconfirmed.dsbl.org')
-
 else
     echo
     echo 'Could not use that address.'
@@ -133,14 +130,12 @@ exit 0
 
 # Exercises:
 # --------
-
 # 1) Check arguments to script,
-#    and exit with appropriate error message if necessary.
+# and exit with appropriate error message if necessary.
 
 # 2) Check if on-line at invocation of script,
-#    and exit with appropriate error message if necessary.
+# and exit with appropriate error message if necessary.
 
 # 3) Substitute generic variables for "hard-coded" BHL domains.
 
-# 4) Set a time-out for the script using the "+time=" option
-     to the 'dig' command.
+# 4) Set a time-out for the script using the "+time=" option to the 'dig' command.
